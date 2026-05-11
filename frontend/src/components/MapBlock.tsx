@@ -1,19 +1,30 @@
+import { ExternalLink, MapPin } from "lucide-react";
 import { business } from "../data/business";
 
 export const MapBlock = () => (
-  <div className="overflow-hidden rounded-[24px] border border-line bg-panel">
+  <div className="relative min-h-[560px] overflow-hidden rounded-[24px] border border-line bg-panel shadow-line">
     <iframe
-      className="h-[460px] w-full"
+      className="absolute inset-0 h-full w-full"
       title="Карта проезда к автосервису Доктор Робот"
-      src="https://yandex.com/map-widget/v1/?ll=37.881849%2C55.745025&mode=search&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%A1%D0%B0%D0%BB%D1%82%D1%8B%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%2C%2051%2C%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%2011%2F1&z=16"
+      src="https://yandex.ru/map-widget/v1/?ll=37.881849%2C55.745025&z=17&pt=37.881849%2C55.745025%2Cpm2rdm"
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
     />
-    <div className="border-t border-line p-4 text-sm leading-6 text-muted">
-      <a className="link" href="https://yandex.com/maps/-/CPcHYGZY" target="_blank" rel="noreferrer">
-        Открыть адрес в Яндекс Картах
-      </a>
-      <span className="ml-2">{business.address}</span>
-    </div>
+    <a
+      className="absolute inset-x-4 bottom-4 flex items-start gap-3 rounded-2xl border border-line bg-surface/92 p-4 text-left shadow-soft backdrop-blur-md transition hover:border-accent/50 hover:bg-surface"
+      href="https://yandex.com/maps/-/CPcHYGZY"
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Открыть адрес ${business.address} в Яндекс Картах`}
+    >
+      <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+      <span className="min-w-0">
+        <span className="block text-sm font-bold leading-6 text-ink">{business.address}</span>
+        <span className="mt-1 inline-flex items-center gap-1 text-sm font-bold text-accent">
+          Открыть в Яндекс Картах
+          <ExternalLink className="h-4 w-4" aria-hidden="true" />
+        </span>
+      </span>
+    </a>
   </div>
 );
