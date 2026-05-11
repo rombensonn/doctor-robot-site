@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0b1017"/>
+      <stop offset="1" stop-color="#172238"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop stop-color="#2f7dff"/>
+      <stop offset="1" stop-color="#f04438"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="64" y="64" width="1072" height="502" rx="34" fill="#101923" stroke="#28384c"/>
+  <path d="M780 181h134c57 0 103 46 103 103v49c0 57-46 103-103 103H780c-57 0-103-46-103-103v-49c0-57 46-103 103-103Z" fill="#162437" stroke="#2f7dff" stroke-width="6"/>
+  <circle cx="800" cy="309" r="58" fill="none" stroke="#f3f7fb" stroke-width="18"/>
+  <circle cx="894" cy="309" r="58" fill="none" stroke="#f3f7fb" stroke-width="18"/>
+  <path d="M714 442h272" stroke="url(#line)" stroke-width="14" stroke-linecap="round"/>
+  <text x="104" y="187" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="58" font-weight="700">Доктор Робот</text>
+  <text x="104" y="271" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="46" font-weight="700">Ремонт DSG, Powershift, DCT и CVT</text>
+  <text x="104" y="344" fill="#aebccc" font-family="Arial, sans-serif" font-size="30">Диагностика, мехатроники, сцепления, адаптация</text>
+  <text x="104" y="462" fill="#ffffff" font-family="Arial, sans-serif" font-size="28">Москва, Салтыковская ул., 51 • +7 (905) 557-40-46</text>
+</svg>

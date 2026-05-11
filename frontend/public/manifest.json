@@ -1,0 +1,17 @@
+{
+  "name": "Доктор Робот",
+  "short_name": "Доктор Робот",
+  "description": "Ремонт DSG, Powershift, DCT, CVT и мехатроников в Москве",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1017",
+  "theme_color": "#0b1017",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

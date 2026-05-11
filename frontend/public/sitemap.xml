@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.ru/</loc><priority>1.0</priority></url>
+  <url><loc>https://example.ru/services</loc><priority>0.9</priority></url>
+  <url><loc>https://example.ru/services/remont-dsg</loc><priority>0.9</priority></url>
+  <url><loc>https://example.ru/services/remont-dsg-dq200</loc><priority>0.9</priority></url>
+  <url><loc>https://example.ru/services/zamena-stsepleniya-dsg-dq200</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-mehatronika-dsg-dq200</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-dsg-dl501-0b5</loc><priority>0.9</priority></url>
+  <url><loc>https://example.ru/services/zamena-stsepleniya-dsg-dl501</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-dsg-dq500</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-powershift</loc><priority>0.9</priority></url>
+  <url><loc>https://example.ru/services/remont-powershift-ford-focus-3</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/zamena-stsepleniya-ford-focus-3</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-6dct-kia-ceed</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-7dct-hyundai-kia</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/services/remont-variatora-chery</loc><priority>0.85</priority></url>
+  <url><loc>https://example.ru/prices</loc><priority>0.8</priority></url>
+  <url><loc>https://example.ru/diagnostics</loc><priority>0.8</priority></url>
+  <url><loc>https://example.ru/brands</loc><priority>0.7</priority></url>
+  <url><loc>https://example.ru/reviews</loc><priority>0.7</priority></url>
+  <url><loc>https://example.ru/contacts</loc><priority>0.8</priority></url>
+  <url><loc>https://example.ru/privacy</loc><priority>0.2</priority></url>
+</urlset>

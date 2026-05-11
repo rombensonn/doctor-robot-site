@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-cyrillic.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+:root {
+  --color-surface: 11 16 23;
+  --color-panel: 16 25 35;
+  --color-panel-2: 22 34 49;
+  --color-ink: 243 247 251;
+  --color-muted: 174 188 204;
+  --color-line: 42 56 76;
+  --color-accent: 47 125 255;
+  --color-danger: 240 68 56;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgb(11 16 23 / 0.98), rgb(8 12 18 / 1)),
+    radial-gradient(circle at 20% 0%, rgb(47 125 255 / 0.18), transparent 34%);
+  color: rgb(var(--color-ink));
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::selection {
+  background: rgb(var(--color-accent) / 0.35);
+}
+
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--color-accent));
+  outline-offset: 3px;
+}
+
+@layer components {
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .section {
+    @apply py-16 sm:py-20;
+  }
+
+  .hero-grid > .container-px,
+  .page-hero > .container-px,
+  .section > .container-px {
+    animation: site-fade-up 0.38s ease-out both;
+  }
+
+  .section-muted {
+    @apply border-y border-line/70 bg-panel2/40;
+  }
+
+  .section-head {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
+  .section-head-left {
+    @apply mx-0 text-left;
+  }
+
+  .section-head h2,
+  .content-card h2 {
+    @apply text-3xl font-bold leading-tight text-ink sm:text-4xl;
+  }
+
+  .section-head p:not(.eyebrow) {
+    @apply mt-4 text-base leading-7 text-muted;
+  }
+
+  .page-hero {
+    @apply border-b border-line/70 bg-panel2/30 py-12 sm:py-16;
+  }
+
+  .page-hero-compact {
+    @apply py-12;
+  }
+
+  .page-hero h1 {
+    @apply mt-4 max-w-4xl text-4xl font-bold leading-tight text-ink sm:text-5xl;
+  }
+
+  .page-hero p:not(.eyebrow) {
+    @apply mt-5 max-w-3xl text-lg leading-8 text-muted;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase text-accent;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-bold transition disabled:cursor-not-allowed disabled:opacity-60;
+    transition-property: transform, background-color, border-color, color, box-shadow, opacity;
+    transition-duration: 180ms;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn:active {
+    transform: translateY(1px) scale(0.99);
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white shadow-line hover:bg-blue-500;
+  }
+
+  .btn-secondary {
+    @apply border border-line bg-white/5 text-ink hover:bg-white/10;
+  }
+
+  .btn-ghost {
+    @apply text-muted hover:bg-white/5 hover:text-ink;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-line bg-white/5 text-ink transition hover:bg-white/10;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-2 text-sm font-bold text-ink;
+  }
+
+  .badge-strong {
+    @apply border-accent/30 bg-accent/10 text-blue-100;
+  }
+
+  .service-card,
+  .review-card,
+  .content-card {
+    @apply rounded-[22px] border border-line bg-panel p-5 shadow-line;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .review-card:hover,
+  .content-card:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--color-accent) / 0.45);
+  }
+
+  .service-tile {
+    @apply rounded-[20px] border border-line bg-panel p-5 text-left shadow-line transition hover:border-accent/60 hover:bg-panel2;
+  }
+
+  .service-tile h2,
+  .service-tile h3 {
+    @apply mt-4 text-lg font-bold leading-snug text-ink;
+  }
+
+  .service-tile p {
+    @apply mt-3 text-sm leading-6 text-muted;
+  }
+
+  .step-card {
+    @apply rounded-[20px] border border-line bg-panel p-5;
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--color-accent) / 0.45);
+  }
+
+  .step-card span {
+    @apply text-sm font-bold text-accent;
+  }
+
+  .step-card h3 {
+    @apply mt-4 text-lg font-bold leading-snug text-ink;
+  }
+
+  .field {
+    @apply grid gap-2 text-sm font-bold text-ink;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    @apply min-h-12 rounded-2xl border border-line bg-surface px-4 py-3 text-base font-medium text-ink outline-none transition placeholder:text-muted/60 focus:border-accent;
+    transition-property: border-color, box-shadow, background-color;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    box-shadow: 0 0 0 4px rgb(var(--color-accent) / 0.12);
+  }
+
+  .field textarea {
+    @apply resize-y;
+  }
+
+  .field small {
+    @apply text-sm font-medium text-red-300;
+  }
+
+  .link {
+    @apply font-bold text-accent hover:text-white;
+  }
+
+  .faq-item {
+    @apply rounded-[18px] border border-line bg-panel p-5;
+  }
+
+  .faq-item summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-bold text-ink;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    @apply mt-4 text-sm leading-7 text-muted;
+  }
+
+  .brand-chip {
+    @apply rounded-2xl border border-line bg-panel px-3 py-3 text-center text-sm font-bold text-ink;
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .brand-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--color-accent) / 0.45);
+  }
+
+  .contact-row {
+    @apply flex gap-3 rounded-2xl border border-line bg-panel p-4;
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .contact-row:hover {
+    transform: translateX(2px);
+    border-color: rgb(var(--color-accent) / 0.45);
+  }
+
+  .gallery-card {
+    @apply overflow-hidden rounded-[22px] border border-line bg-panel shadow-line;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-3px);
+    border-color: rgb(var(--color-accent) / 0.55);
+  }
+
+  .gallery-card img {
+    @apply aspect-[3/2] w-full object-cover;
+    transition: transform 220ms ease, filter 220ms ease;
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.025);
+    filter: saturate(1.08);
+  }
+
+  .gallery-card h3 {
+    @apply text-base font-bold text-ink;
+  }
+
+  .gallery-card p {
+    @apply mt-2 text-sm leading-6 text-muted;
+  }
+
+  .check-list {
+    @apply mt-5 grid gap-3 text-sm leading-6 text-muted;
+  }
+
+  .check-list li {
+    @apply relative pl-7;
+  }
+
+  .check-list li::before {
+    content: "";
+    @apply absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-accent;
+  }
+
+  .prose-policy h1 {
+    @apply mt-4 text-4xl font-bold text-ink sm:text-5xl;
+  }
+
+  .prose-policy h2 {
+    @apply mt-10 text-2xl font-bold text-ink;
+  }
+
+  .prose-policy p {
+    @apply mt-4 text-base leading-8 text-muted;
+  }
+}
+
+@keyframes site-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

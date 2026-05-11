@@ -1,0 +1,9 @@
+{
+  "name": "doctor-robot/backend",
+  "description": "PHP lead API for Doctor Robot landing",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

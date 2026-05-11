@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+dist/
+.env
+*.log
+backend/storage/logs/*.log
+backend/storage/rate-limit/
+frontend/dist/

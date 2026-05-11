@@ -1,0 +1,23 @@
+CREATE TABLE leads (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(80) NOT NULL,
+  phone VARCHAR(24) NOT NULL,
+  car VARCHAR(120) NULL,
+  transmission_type VARCHAR(80) NULL,
+  symptom VARCHAR(120) NULL,
+  message TEXT NULL,
+  page_url VARCHAR(500) NULL,
+  form_source VARCHAR(80) NULL,
+  utm_source VARCHAR(120) NULL,
+  utm_medium VARCHAR(120) NULL,
+  utm_campaign VARCHAR(120) NULL,
+  utm_content VARCHAR(120) NULL,
+  utm_term VARCHAR(120) NULL,
+  ip_address VARCHAR(45) NULL,
+  user_agent VARCHAR(500) NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  INDEX idx_created_at (created_at),
+  INDEX idx_phone (phone),
+  INDEX idx_form_source (form_source)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
